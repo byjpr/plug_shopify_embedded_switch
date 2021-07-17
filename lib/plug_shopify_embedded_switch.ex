@@ -1,6 +1,20 @@
 defmodule PlugShopifyEmbeddedSwitch do
   @moduledoc """
-  Switches auth between URL Params and JWT, designed for Shopify App Bridge
+  Switches auth between URL Params and JWT, designed for Shopify App Bridge. Add the plug to any pipeline
+  where you would like to do both URL param and JWT auth.
+
+  ```elixir
+  pipeline :demo do
+    plug PlugShopifyEmbeddedSwitch
+  end
+  ```
+
+  This plug will set three keys in the private object which you can use in follow up plugs.
+
+  1. `conn.private[:shopify_url_config]` Shop Origin URL
+  2. `conn.private[:shopify_jwt_config]` JWT Object
+  3. `conn.private[:shop_origin_type]` will return either `:jwt` or `:url`
+
   """
   import Plug.Conn
 
