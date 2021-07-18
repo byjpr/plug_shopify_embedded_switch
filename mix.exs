@@ -7,8 +7,25 @@ defmodule PlugShopifyEmbeddedSwitch.MixProject do
       version: "0.1.0",
       elixir: "~> 1.10",
       start_permanent: Mix.env() == :prod,
+      description: description(),
+      package: package(),
       deps: deps()
     ]
+  end
+
+  defp package do
+    [
+      files: ["lib", "mix.exs", "README*", "LICENSE*"],
+      maintainers: ["Jordan Parker"],
+      licenses: ["AGPL-3.0-only"],
+      links: %{"GitHub" => "https://github.com/byjpr/plug_shopify_embedded_switch"}
+    ]
+  end
+
+  defp description do
+    """
+    A Plug to decide what type of Auth to use for Shopify App Bridge
+    """
   end
 
   # Run "mix help compile.app" to learn about applications.
