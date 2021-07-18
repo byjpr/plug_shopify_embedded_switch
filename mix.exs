@@ -38,6 +38,7 @@ defmodule PlugShopifyEmbeddedSwitch.MixProject do
   # Run "mix help deps" to learn about dependencies.
   defp deps do
     [
+      {:versioce, "~> 1.1.1"},
       {:phoenix, "~> 1.5.4"},
       {:plug_cowboy, "~> 2.0"},
       {:ex_doc, ">= 0.0.0", only: :dev, runtime: false}
