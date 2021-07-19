@@ -16,7 +16,7 @@ defmodule PlugShopifyEmbeddedSwitchTest do
     |> put_req_header(
       "authorization",
       "Bearer #{@bearer}"
-      )
+    )
   end
 
   test "URL Parameters should make :shop_origin_type :url" do
